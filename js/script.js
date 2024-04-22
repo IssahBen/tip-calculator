@@ -19,16 +19,15 @@ let selected = false
 let tip_amount = ""
 let totalperperson = ""
 
-form.addEventListener("submit", prevent)
 
 
+
+function clickbtn() {
+    submit_btn.click()
+}
 
 setInterval(clickbtn, 1000)
 
-function callback(button) {
-    if (button.value == selected_value) { button.classList.toggle("bg-black") }
-
-}
 function prevent(e) {
     e.preventDefault()
     if (custom_tip.value.trim() != "" && selected == false) {
@@ -36,6 +35,7 @@ function prevent(e) {
     } else if (custom_tip.value.trim() != "" && selected == true) {
         buttons.forEach(function (button) {
             if (button.value == selected_value) {
+                button.classList.toggle("select")
                 button.classList.toggle("bg-very_dark_cyan")
                 selected = false
             }
@@ -49,25 +49,29 @@ function prevent(e) {
         amount_display.innerHTML = totalperperson.toFixed(2)
 
     }
+    console.log(2)
 }
-function clickbtn() {
-    submit_btn.click()
-}
+form.addEventListener("submit", prevent)
+
 
 function toggleColor(e) {
     if (selected == true) {
         if (e.target.value == selected_value) {
+            e.target.classList.toggle("select")
             e.target.classList.toggle("bg-very_dark_cyan")
+
             selected_value = ""
-            selected == false
+            selected = false
         }
     } else {
-        e.target.classList.toggle("bg-black")
+        console.log(e.target)
         e.target.classList.toggle("bg-very_dark_cyan")
+        e.target.classList.toggle("select")
+
+        console.log(e.target)
         selected = true
         selected_value = e.target.value
 
-        console.log(e.target)
     }
 
 }

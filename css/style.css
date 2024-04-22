@@ -785,6 +785,10 @@ video {
   border-top-right-radius:60px;
 }
 
+.select{
+  background-color:black;
+}
+
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -797,10 +801,6 @@ video {
 
   .md\:h-10 {
     height: 2.5rem;
-  }
-
-  .md\:h-5 {
-    height: 1.25rem;
   }
 
   .md\:h-min {
@@ -853,12 +853,5 @@ video {
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .lg\:px-0 {
-    padding-left: 0px;
-    padding-right: 0px;
   }
 }
